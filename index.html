@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="image/favicon_io/favicon.ico" type="image/x-icon">
+    <script src="scripts/scriptEscreverTextoInicial.js"></script>
+    <script src="scripts/acoesBTN.js"></script>
+    <script src="scripts/barraSkills.js"></script>
+    <script src="scripts/dropdown.js"></script>
+    <script src="scripts/darkmode.js"></script>
+    <title>Carlos Augusto</title>
+</head>
+
+<body>
+    <div class="containerNavBar">
+        <nav class="navegacaoBar">
+
+            <div class="logo-group">
+                <img src="image/logo_branco.png" alt="Logo Carlos Augusto" class="imagemlogo" id="logo-navbar">
+                <h1 class="nav-title">Portfólio</h1>
+            </div>
+
+            <div class="buttons-group">
+                <button class="button btn-home" type="button" onclick="rolarPara('home')">Home</button>
+                <button class="button btn-details" type="button" onclick="rolarPara('detalhes')">Detalhes</button>
+                <button class="button btn-habilidades" type="button"
+                    onclick="rolarPara('habilidades')">Habilidades</button>
+                <button class="button btn-services" type="button" onclick="rolarPara('servicos')">Serviços</button>
+                <button class="button btn-contacts" type="button" onclick="rolarPara('contatos')">Contatos</button>
+                <button class="button btn-theme" type="button" id="theme-toggle" onclick="toggleDarkMode()"
+                    aria-label="Alternar tema escuro">🌙</button>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <div class="containerSectionArticleHome">
+            <section id="home" class="hero-section">
+                <div class="hero-content">
+                    <span class="badge-greeting">Olá, eu sou o Carlos Augusto</span>
+
+                    <h1 class="hero-title">
+                        <span id="typing-title"></span>
+                        <span class="cursor">|</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        <span id="typing-description"></span>
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="redirecionar('projetos')"
+                            id="projetos">Habilidades</button>
+                        <button class="btn-secondary" onclick="redirecionar('github')" id="github">Meu GitHub</button>
+                        <button class="btn-secondary" onclick="redirecionar('linkedin')" id="linkedin">Meu linkedin</button>
+                    </div>
+                </div>
+
+                <div class="hero-image-container">
+                    <img src="image/carlos1.jpg" alt="Carlos Augusto" class="profile-pic">
+
+                    <div class="floating-badge badge-java">☕ Java & Spring</div>
+                    <div class="floating-badge badge-data">📊 Data & BI</div>
+                </div>
+            </section>
+        </div>
+
+        <div class="containerSectionArticleDetails">
+            <section id="detalhes" class="details-section">
+
+                <div class="section-header">
+                    <span class="badge-subtitle">Sobre Mim</span>
+                    <h2 class="section-title">Minha Trajetória & Especialidades</h2>
+                    <p class="section-description">
+                        Combino lógica de programação robusta com análise de dados para criar
+                        sistemas escaláveis que realmente resolvem problemas de negócio.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <button class="btn-skill" type="button" onclick="caixa_mensagem('backend', this)">
+                        <div class="skill-card">
+                            <div class="card-icon">💻</div>
+                            <h3 class="card-title">Arquitetura Back-end</h3>
+                            <p class="card-text">
+                                Construção de sistemas sólidos e APIs RESTful utilizando <strong>Java, Spring
+                                    Boot</strong> e estruturação no padrão MVC e também MVP.
+                            </p>
+                        </div>
+                    </button>
+
+                    <button class="btn-skill" type="button" onclick="caixa_mensagem('bi', this)">
+                        <div class="skill-card">
+                            <div class="card-icon">📊</div>
+                            <h3 class="card-title">Business Intelligence</h3>
+                            <p class="card-text">
+                                Análise profunda de métricas através de <strong>SQL</strong> e criação de dashboards
+                                gerenciais interativos no <strong>Looker Studio</strong>.
+                            </p>
+                        </div>
+                    </button>
+
+                    <button class="btn-skill" type="button" onclick="caixa_mensagem('saas', this)">
+                        <div class="skill-card">
+                            <div class="card-icon">🚀</div>
+                            <h3 class="card-title">Desenvolvimento SaaS</h3>
+                            <p class="card-text">
+                                Foco em criar ferramentas de alto impacto, arquitetando desde Mini-ERPs até sistemas
+                                logísticos focado em otimização.
+                            </p>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="text-details-skill" id="container-detalhes">
+                    <div class="details-content-box" id="caixa-de-texto">
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <div class="containerSectionArticleHabilidade">
+            <section id="habilidades" class="skills-roadmap-section">
+
+                <div class="section-header">
+                    <span class="badge-subtitle">Hard Skills</span>
+                    <h2 class="section-title">Meu Ecossistema</h2>
+                    <p class="section-description">
+                        Do banco de dados à interface, estas são as tecnologias que utilizo para construir e otimizar
+                        sistemas.
+                    </p>
+                </div>
+
+                <div class="roadmap-content">
+
+                    <div class="roadmap-left">
+
+                        <div class="skill-group-card">
+                            <h3 class="group-title">💻 Back-end & Dados</h3>
+
+                            <div class="skill-item">
+                                <div class="skill-info"><span class="skill-name">Java & Spring Boot</span><span
+                                        class="skill-percent">95%</span></div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="95%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info"><span class="skill-name">Python</span><span
+                                        class="skill-percent">85%</span></div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info"><span class="skill-name">SQL</span><span
+                                        class="skill-percent">70%</span></div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="70%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-group-card">
+                            <h3 class="group-title">🌐 Front-end & Ferramentas</h3>
+
+                            <div class="skill-item">
+                                <div class="skill-info"><span class="skill-name">HTML & CSS</span><span
+                                        class="skill-percent">90%</span></div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="90%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info"><span class="skill-name">JavaScript</span><span
+                                        class="skill-percent">60%</span></div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="60%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info"><span class="skill-name">Git & GitHub</span><span
+                                        class="skill-percent">90%</span></div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" data-width="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-right">
+                        <div class="roadmap-path"></div>
+
+                        <div class="floating-badge badge-pos-1">🐍 Python</div>
+                        <div class="floating-badge badge-pos-2">🍃 Spring Boot</div>
+                        <div class="floating-badge badge-pos-3">🗄️ SQL</div>
+                        <div class="floating-badge badge-pos-4">📊 Looker Studio</div>
+                        <div class="floating-badge badge-pos-5">⚙️ Git/GitHub</div>
+                        <div class="floating-badge badge-pos-6">☕ Java & MVC</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="containerSectionArticleServices">
+            <section id="servicos" class="services-section">
+
+                <div class="section-header">
+                    <span class="badge-subtitle">Meus serviços</span>
+                    <h2 class="section-title">Serviços de Desenvolvimento</h2>
+                    <p class="section-description">
+                        Aqui trago as principais soluções tecnológicas que ofereço para transformar os desafios do seu
+                        negócio em resultados reais e escaláveis.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon-wrap">💻</div>
+                        <h3 class="service-card-title">Desenvolvimento Back-end</h3>
+                        <p class="service-card-text">Construção de APIs RESTful robustas e sistemas escaláveis com foco
+                            em arquitetura limpa e alta performance.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Java</span>
+                            <span class="service-tag">Spring Boot</span>
+                            <span class="service-tag">MVC/MVP</span>
+                        </div>
+                        <div class="service-card-link">
+                            Saiba mais <span>→</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon-wrap">📊</div>
+                        <h3 class="service-card-title">Business Intelligence</h3>
+                        <p class="service-card-text">Transformo dados brutos em dashboards gerenciais interativos e
+                            análises estratégicas que apoiam decisões de negócio.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">SQL</span>
+                            <span class="service-tag">Looker Studio</span>
+                            <span class="service-tag">Python</span>
+                        </div>
+                        <div class="service-card-link">
+                            Saiba mais <span>→</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon-wrap">🚀</div>
+                        <h3 class="service-card-title">Sistemas SaaS</h3>
+                        <p class="service-card-text">Arquitetura e desenvolvimento de produtos completos, com foco em
+                            desenvolvimento de Mini-ERPs a sistemas logísticos focados em otimização real.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Java</span>
+                            <span class="service-tag">Spring Boot</span>
+                            <span class="service-tag">SQL</span>
+                            <span class="service-tag">Python</span>
+                            <span class="service-tag">HTML/CSS</span>
+                        </div>
+                        <div class="service-card-link">
+                            Saiba mais <span>→</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon-wrap">🔗</div>
+                        <h3 class="service-card-title">Integração de Sistemas</h3>
+                        <p class="service-card-text">Conecto plataformas e automação de fluxos de dados entre sistemas
+                            via integrações customizadas.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">API Rest</span>
+                        </div>
+                        <div class="service-card-link">
+                            Saiba mais <span>→</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon-wrap">🐍</div>
+                        <h3 class="service-card-title">Automação & Scripts</h3>
+                        <p class="service-card-text">Automatizo tarefas repetitivas, limpeza de dados e projeções
+                            estatísticas com scripts Python eficientes e bem documentados.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Python e suas bibliotecas</span>
+                        </div>
+                        <div class="service-card-link">
+                            Saiba mais <span>→</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon-wrap">🌐</div>
+                        <h3 class="service-card-title">Front-end & Portfólios</h3>
+                        <p class="service-card-text">Desenvolvimento de interfaces web modernas e responsivas com
+                            atenção especial a usabilidade e identidade visual da marca.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">HTML/CSS</span>
+                            <span class="service-tag">JavaScript</span>
+                            <span class="service-tag">Responsividade</span>
+                        </div>
+                        <div class="service-card-link">
+                            Saiba mais <span>→</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="service-cta">
+                    <p>Tem um projeto em mente? Vamos conversar.</p>
+                    <button class="btn-primary" onclick="rolarPara('contatos')">Entrar em Contato</button>
+                </div>
+
+            </section>
+        </div>
+
+        <div class="containerSectionArticleContacts">
+            <section id="contatos" class="contact-section">
+                <div class="section-header">
+                    <span class="badge-subtitle">Me Contate</span>
+                    <h2 class="section-title">Vamos Conversar?</h2>
+                    <p class="section-description">
+                        Estou disponível para novos projetos e oportunidades. Escolha a melhor forma de entrar em contato comigo para desenvolvermos juntos a solução que você precisa.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <button class="contact-btn" onclick="redirecionar('whatsapp')" type="button">
+                        <img src="image/whatsapp.png" alt="Ícone WhatsApp" class="contact-icon-img">
+                        <span>WhatsApp</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <h2 class="footer-title">Carlos Augusto</h2>
+            <p class="footer-subtitle">Desenvolvedor de Software</p>
+            
+            <div class="footer-social">
+                <span class="social-link" onclick="redirecionar('github')">GitHub</span>
+                <span class="social-link" onclick="redirecionar('linkedin')">LinkedIn</span>
+                <span class="social-link" onclick="redirecionar('whatsapp')">WhatsApp</span>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Carlos Augusto. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
